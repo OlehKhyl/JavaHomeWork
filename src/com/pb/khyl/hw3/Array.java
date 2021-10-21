@@ -10,9 +10,9 @@ public class Array {
         System.out.println("Введите значения для массива: ");
         for(int i = 0; i < array.length; i++) {
             System.out.print("array[" + i + "]= ");
-            System.out.println();
             array[i] = in.nextInt();
         }
+        System.out.println();
 
         // Вывод массива в консоль
         System.out.print("array[");
