@@ -13,7 +13,7 @@ public class Auth {
             this.login = login;
         }
 
-        if(password.length() < 5) {
+        if(!(password.length() > 5)) {
             throw new WrongPasswordException("Длина пароля должна быть более 5 символов.");
         } else if (!password.matches("^[a-zA-Z0-9_]+$")) {
             throw new WrongPasswordException("Пароль может содержать только латинские буквы, цифры и знаки подчеркивания.");
