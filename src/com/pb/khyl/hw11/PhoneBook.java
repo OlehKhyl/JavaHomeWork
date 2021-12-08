@@ -198,7 +198,6 @@ public class PhoneBook {
     }
 
     public ArrayList<Contact> readFile() throws IOException {
-//        не работает кидает исключение.
         ObjectMapper objectMapper = new ObjectMapper();
         File contactFile = new File("contacts.json");
         ArrayList<Contact> cont = objectMapper.readValue(contactFile, new TypeReference<ArrayList<Contact>>(){});
