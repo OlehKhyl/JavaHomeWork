@@ -1,10 +1,9 @@
 package com.pb.khyl.hw11;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         PhoneBook phoneBook = new PhoneBook();
         Scanner sc = new Scanner(System.in);
         while (true) {
