@@ -166,18 +166,28 @@ public class PhoneBook {
         }
     }
 
-    public void writeToFile() throws IOException {
+    public void writeToFile() {
         ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.writeValue(new File("contacts.json"), contacts);
+        try {
+            objectMapper.writeValue(new File("contacts.json"), contacts);
+        } catch (IOException e) {
+            System.out.println("Error writing file: " + e.getMessage());
+        }
     }
 
-    public ArrayList<Contact> readFile() throws IOException {
+    public ArrayList<Contact> readFile() {
         ObjectMapper objectMapper = new ObjectMapper();
         File contactFile = new File("contacts.json");
-        ArrayList<Contact> cont = objectMapper.readValue(contactFile, new TypeReference<ArrayList<Contact>>(){});
-        System.out.println(cont);
-        contacts.addAll(cont);
-        return contacts;
+        ArrayList<Contact> cont = null;
+        try {
+            cont = objectMapper.readValue(contactFile, new TypeReference<ArrayList<Contact>>(){});
+            System.out.println(cont);
+            contacts.addAll(cont);
+            return contacts;
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
+        }
+        return cont;
     }
 
     @Override
