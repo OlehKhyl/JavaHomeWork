@@ -80,7 +80,7 @@ public class Main {
                 case "в":
                 case "Q":
                 case "q":
-                    System.exit(1);
+                    System.exit(0);
             }
         }
     }
